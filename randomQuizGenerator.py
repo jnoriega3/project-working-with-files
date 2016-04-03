@@ -30,18 +30,18 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
                         
             #       2. instead of creating quiz and answer files in the current working directory, create a folder titled 'quizzes' and another folder titled 'answers'.
            import os
-           os.makedirs('C:\\quizzes\\answer key')
+           os.makedirs(os.path.join('C:\\quizzes\\answer key'))
            
             #       3. place the randomly-generated quizzes in the 'quizzes' directory.
-            quizzes = open('C:\\quizzes' % (quizNum + 1), 'w')
+            quizFile = open('C:\\quizzes\\capitalsquiz%s.txt' % (quizNum + 1), 'w')
             
             #       4. plaec the corresponding answers in the 'answers' directory.
-            answerkey = open('C:\\answerkey' % (quizNum + 1), 'w')
+            answerkey = open('C:\\answerkey\\capitalsquiz_answers%s.txt' % (quizNum + 1), 'w')
             
             #quiz header
             quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
             quizFile.write((' ' * 20) + 'State capitals Quiz (Form %s) ' % (quizNum + 1))
-            quizFIle.write('\n\n')
+            quizFile.write('\n\n')
             
             #shuffle state order
             states = list(capitals.keys())
@@ -58,7 +58,7 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
                 random.shuffle(answerOptions)
 
 			#quiz content and answers
-			quizFile.write('%s. What is hte capital of %s?\n' % (questionNum + 1, states[questionNum]))
+			quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
 			for i in range (4):
 				quizFile.write(' %s. %s\n' % ('ABCD'[i], answerOptions[i]))
 			quizFile.write('\n')
