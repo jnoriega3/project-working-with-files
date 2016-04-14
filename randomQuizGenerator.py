@@ -34,10 +34,10 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
            os.makedirs('answers')
            
             #       3. place the randomly-generated quizzes in the 'quizzes' directory.
-            quizFile = open('quizzes\\capitalsquiz%s.txt' % (quizNum + 1), 'w')
+            quizFile = open(os.path.join('quizzes','capitalsquiz%s.txt') % (quizNum + 1), 'w')
             
             #       4. plaec the corresponding answers in the 'answers' directory.
-            answerkey = open('answers\\capitalsquiz_answers%s.txt' % (quizNum + 1), 'w')
+            answerkey = open(os.path.join('answers','capitalsquiz_answers%s.txt') % (quizNum + 1), 'w')
             
             #quiz header
             quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
