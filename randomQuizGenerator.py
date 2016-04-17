@@ -29,13 +29,14 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
 
             #       2. instead of creating quiz and answer files in the current working directory, create a folder titled 'quizzes' and another folder titled 'answers'.
            import os
-           os.makedirs(os.path.relpath('quizzes')
-           os.makedirs(os.path.relpath('answers')
+           os.makedirs('./answers', exist_ok=True)
+           os.makedirs('./quizzes', exist_ok=True)
+           
            for quizNum in range (5):           
             #       3. place the randomly-generated quizzes in the 'quizzes' directory.
-            quizFile = open(os.path.join('quizzes','capitalsquiz%s.txt' % (quizNum + 1)), 'w')
+            quizFile = open(./'quizzes','capitalsquiz%s.txt' % (quizNum + 1)), 'w')
             #       4. plaec the corresponding answers in the 'answers' directory.
-            answerkey = open(os.path.join('answers','capitalsquiz_answers%s.txt' % (quizNum + 1)), 'w')
+            answerkey = open(./'answers','capitalsquiz_answers%s.txt' % (quizNum + 1)), 'w')
             #quiz header
             quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
             quizFile.write((' ' * 20) + 'State capitals Quiz (Form %s) ' % (quizNum + 1))
